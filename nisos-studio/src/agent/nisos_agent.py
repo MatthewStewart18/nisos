@@ -1,5 +1,6 @@
 from typing import TypedDict, List
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_cloudflare.chat_models import ChatCloudflareWorkersAI
 from langchain_core.messages import SystemMessage
 from langgraph.graph import START, StateGraph, MessagesState, END
 from langgraph.prebuilt import tools_condition, ToolNode
@@ -10,7 +11,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # llm = ChatGoogleGenerativeAI(model="gemini-3-flash-preview")
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=os.getenv('GEMINI_API_KEY'))
+# llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", api_key=os.getenv('GEMINI_API_KEY'))
+llm = ChatCloudflareWorkersAI(
+    model="@cf/qwen/qwen3-30b-a3b-fp8", 
+    api_token=os.getenv('CF_AI_API_TOKEN'),
+    account_id=os.getenv('CF_ACCOUNT_ID')
+)
+
 
 # url = 'http://localhost:3001/users/alex_rivers'
 
@@ -53,7 +60,7 @@ def risk_flagging(state: State):
     threat_confidence = llm_output.get("threat_confidence", 0.0)
 
     # Determine threat status based on a 0.7 confidence threshold
-    is_threat_detected = threat_confidence > 0.7
+    is_threat_detected = float(threat_confidence) > float(0.7)
     
     print(f"--- [Node: risk_flagging] Threat Detected: {is_threat_detected} (Confidence: {threat_confidence}) ---")
 

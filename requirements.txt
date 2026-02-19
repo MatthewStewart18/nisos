@@ -14,3 +14,4 @@ starlette
 uvicorn
 requests
 python-dotenv
+langchain_cloudflare

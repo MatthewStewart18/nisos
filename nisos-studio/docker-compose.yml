@@ -8,6 +8,8 @@ services:
     environment:
       - MOCKOON_URL=http://mockoon:3001
       - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - CF_AI_API_TOKEN=${CF_AI_API_TOKEN}
+      - CF_ACCOUNT_ID=${CF_ACCOUNT_ID}
       - LANGSMITH_TRACING=true
       - LANGSMITH_PROJECT=${LANGSMITH_PROJECT}
       - LANGSMITH_API_KEY=${LANGSMITH_API_KEY}
