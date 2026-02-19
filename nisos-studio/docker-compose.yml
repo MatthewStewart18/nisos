@@ -18,7 +18,7 @@ services:
       # Use the native Coolify domain label (handles routing and SSL automatically)
       - "coolify.fqdn=https://nisos.mstewart.dev"
       # Define the Basic Auth middleware
-      - "traefik.http.middlewares.nisos-auth.basicauth.users=user:$$2y$$05$$vbrV9N7Lz583DxZQHxx49uxbU87.5BAXMKeIluEsFqnOrCELK0GIu"
+      - "traefik.http.middlewares.nisos-auth.basicauth.users=user:$$2a$$12$$y/jiGy78rijSS9nXJ5K5DOM00Eko1RMytKheCOAKB/r4oy/te5PWq"
       # Tell Coolify to attach this middleware to the domain above
       - "coolify.traefik.middlewares=nisos-auth"
 
