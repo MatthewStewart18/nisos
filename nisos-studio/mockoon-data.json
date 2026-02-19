@@ -1,0 +1,234 @@
+{
+  "uuid": "ecfc908c-4acd-4505-82e8-36787d937416",
+  "lastMigration": 33,
+  "name": "Insta mock",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "edbcc74b-509d-4cb0-99c6-2fe17a585bab",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users/alex_rivers",
+      "responses": [
+        {
+          "uuid": "1a288a63-873c-4d56-9b95-613eb1e30139",
+          "body": "{\n    \"graphql\": {\n        \"user\": {\n            \"biography\": \"Digital creator & coffee enthusiast. ☕️\\nExploring the world one pixel at a time.\",\n            \"external_url\": \"https://example.com/portfolio\",\n            \"edge_followed_by\": {\n                \"count\": 12840\n            },\n            \"edge_follow\": {\n                \"count\": 452\n            },\n            \"full_name\": \"Alex Rivers\",\n            \"id\": \"582910344\",\n            \"is_business_account\": true,\n            \"is_private\": false,\n            \"is_verified\": true,\n            \"profile_pic_url\": \"https://picsum.photos/id/64/150/150\",\n            \"profile_pic_url_hd\": \"https://picsum.photos/id/64/1080/1080\",\n            \"username\": \"arivers_digital\",\n            \"timeline_media\": {\n                \"count\": 142,\n                \"page_info\": {\n                    \"has_next_page\": true,\n                    \"end_cursor\": \"QVFEZ194SDFm...\"\n                },\n                \"posts\": [\n                    {\n                        \"post\": {\n                            \"id\": \"2456102934\",\n                            \"display_url\": \"https://picsum.photos/id/10/600/600\",\n                            \"caption\": \"Golden hour in the city. 🌆 #vibes\",\n                            \"likes\": {\n                                \"count\": 1204\n                            },\n                            \"comments\": {\n                                \"count\": 48\n                            }\n                        }\n                    },\n                    {\n                        \"post\": {\n                            \"id\": \"2456102935\",\n                            \"display_url\": \"https://picsum.photos/id/10/600/600\",\n                            \"caption\": \"I am going to start a riot in the city\",\n                            \"likes\": {\n                                \"count\": 1400\n                            },\n                            \"comments\": {\n                                \"count\": 36\n                            }\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "ce8842c1-7f82-4fb7-9976-ed7d42e5408f",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users/ben_nixon",
+      "responses": [
+        {
+          "uuid": "2bcf4423-a420-4e3a-8df3-f7172066a694",
+          "body": "{\n    \"graphql\": {\n        \"user\": {\n            \"biography\": \"Chasing sunsets and mountain peaks. 🏔️\\nCanon EOS R5 shooter.\",\n            \"external_url\": \"https://example.com/bennixon-prints\",\n            \"edge_followed_by\": {\n                \"count\": 3420\n            },\n            \"edge_follow\": {\n                \"count\": 210\n            },\n            \"full_name\": \"Ben Nixon\",\n            \"id\": \"1001\",\n            \"is_business_account\": false,\n            \"is_private\": false,\n            \"is_verified\": false,\n            \"profile_pic_url\": \"https://picsum.photos/id/1011/150/150\",\n            \"profile_pic_url_hd\": \"https://picsum.photos/id/1011/1080/1080\",\n            \"username\": \"ben_nixon_lens\",\n            \"timeline_media\": {\n                \"count\": 89,\n                \"page_info\": {\n                    \"has_next_page\": false,\n                    \"end_cursor\": \"XJFd34...\"\n                },\n                \"posts\": [\n                    {\n                        \"post\": {\n                            \"id\": \"9988771\",\n                            \"display_url\": \"https://picsum.photos/id/1015/600/600\",\n                            \"caption\": \"The quiet before the storm in the valley. #nature #peace\",\n                            \"likes\": {\n                                \"count\": 450\n                            },\n                            \"comments\": {\n                                \"count\": 12\n                            }\n                        }\n                    },\n                    {\n                        \"post\": {\n                            \"id\": \"9988772\",\n                            \"display_url\": \"https://picsum.photos/id/1016/600/600\",\n                            \"caption\": \"New lens day! Can't wait to try this out on the trails.\",\n                            \"likes\": {\n                                \"count\": 890\n                            },\n                            \"comments\": {\n                                \"count\": 34\n                            }\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "806b2253-2cff-41a7-b78d-c2944ffe101d",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users/patrick_sherry",
+      "responses": [
+        {
+          "uuid": "1bf22db7-aa47-4599-a684-33751cc5dffe",
+          "body": "{\n    \"graphql\": {\n        \"user\": {\n            \"biography\": \"Money never sleeps. 💸\\nDM for methods. 100% guaranteed returns.\",\n            \"external_url\": \"https://example.com/telegram-link\",\n            \"edge_followed_by\": {\n                \"count\": 10500\n            },\n            \"edge_follow\": {\n                \"count\": 50\n            },\n            \"full_name\": \"Patrick Sherry\",\n            \"id\": \"1002\",\n            \"is_business_account\": true,\n            \"is_private\": false,\n            \"is_verified\": false,\n            \"profile_pic_url\": \"https://picsum.photos/id/1025/150/150\",\n            \"profile_pic_url_hd\": \"https://picsum.photos/id/1025/1080/1080\",\n            \"username\": \"pat_sherry_biz\",\n            \"timeline_media\": {\n                \"count\": 12,\n                \"page_info\": {\n                    \"has_next_page\": true,\n                    \"end_cursor\": \"AzLk9...\"\n                },\n                \"posts\": [\n                    {\n                        \"post\": {\n                            \"id\": \"8877661\",\n                            \"display_url\": \"https://picsum.photos/id/1026/600/600\",\n                            \"caption\": \"Just cashed out $5k using the new cloning method. DM me before it gets patched! 💳💰\",\n                            \"likes\": {\n                                \"count\": 2100\n                            },\n                            \"comments\": {\n                                \"count\": 150\n                            }\n                        }\n                    },\n                    {\n                        \"post\": {\n                            \"id\": \"8877662\",\n                            \"display_url\": \"https://picsum.photos/id/1027/600/600\",\n                            \"caption\": \"Selling high limit dumps. Fresh lists available. Don't sleep on this.\",\n                            \"likes\": {\n                                \"count\": 1800\n                            },\n                            \"comments\": {\n                                \"count\": 99\n                            }\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "4a1d21ea-36c0-4627-94a8-f393972df7df",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users/lisa_hall",
+      "responses": [
+        {
+          "uuid": "c99aac9d-d2ec-4c6f-9f10-7057c2a93eab",
+          "body": "{\n    \"graphql\": {\n        \"user\": {\n            \"biography\": \"Book lover & Tea drinker. 📚☕️\\nCurrently reading: The Midnight Library.\",\n            \"external_url\": \"https://example.com/goodreads/lisa\",\n            \"edge_followed_by\": {\n                \"count\": 890\n            },\n            \"edge_follow\": {\n                \"count\": 900\n            },\n            \"full_name\": \"Lisa Hall\",\n            \"id\": \"1003\",\n            \"is_business_account\": false,\n            \"is_private\": true,\n            \"is_verified\": false,\n            \"profile_pic_url\": \"https://picsum.photos/id/1035/150/150\",\n            \"profile_pic_url_hd\": \"https://picsum.photos/id/1035/1080/1080\",\n            \"username\": \"lisa_reads_hall\",\n            \"timeline_media\": {\n                \"count\": 240,\n                \"page_info\": {\n                    \"has_next_page\": true,\n                    \"end_cursor\": \"QwEr5...\"\n                },\n                \"posts\": [\n                    {\n                        \"post\": {\n                            \"id\": \"7766551\",\n                            \"display_url\": \"https://picsum.photos/id/1040/600/600\",\n                            \"caption\": \"Sunday mornings are for reading and relaxing. What's on your shelf?\",\n                            \"likes\": {\n                                \"count\": 120\n                            },\n                            \"comments\": {\n                                \"count\": 15\n                            }\n                        }\n                    },\n                    {\n                        \"post\": {\n                            \"id\": \"7766552\",\n                            \"display_url\": \"https://picsum.photos/id/1041/600/600\",\n                            \"caption\": \"Finally finished this masterpiece! Highly recommend.\",\n                            \"likes\": {\n                                \"count\": 200\n                            },\n                            \"comments\": {\n                                \"count\": 22\n                            }\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    },
+    {
+      "uuid": "ed150b9a-dfa3-4f98-b207-52015d82fe48",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "users/john_master",
+      "responses": [
+        {
+          "uuid": "121efbe3-1c65-42c0-9b98-d89cea6c9cc8",
+          "body": "{\n    \"graphql\": {\n        \"user\": {\n            \"biography\": \"Wake up. The system is broken. ✊\\nTime to take matters into our own hands.\",\n            \"external_url\": \"https://example.com/manifesto\",\n            \"edge_followed_by\": {\n                \"count\": 150\n            },\n            \"edge_follow\": {\n                \"count\": 20\n            },\n            \"full_name\": \"John Master\",\n            \"id\": \"1004\",\n            \"is_business_account\": false,\n            \"is_private\": false,\n            \"is_verified\": false,\n            \"profile_pic_url\": \"https://picsum.photos/id/1050/150/150\",\n            \"profile_pic_url_hd\": \"https://picsum.photos/id/1050/1080/1080\",\n            \"username\": \"john_master_truth\",\n            \"timeline_media\": {\n                \"count\": 45,\n                \"page_info\": {\n                    \"has_next_page\": false,\n                    \"end_cursor\": \"TkLm0...\"\n                },\n                \"posts\": [\n                    {\n                        \"post\": {\n                            \"id\": \"6655441\",\n                            \"display_url\": \"https://picsum.photos/id/1055/600/600\",\n                            \"caption\": \"I am done talking. We need to burn it all down. Who is with me on the 5th? 🔥\",\n                            \"likes\": {\n                                \"count\": 15\n                            },\n                            \"comments\": {\n                                \"count\": 4\n                            }\n                        }\n                    },\n                    {\n                        \"post\": {\n                            \"id\": \"6655442\",\n                            \"display_url\": \"https://picsum.photos/id/1056/600/600\",\n                            \"caption\": \"These people are a plague on our society. They don't deserve to be here.\",\n                            \"likes\": {\n                                \"count\": 10\n                            },\n                            \"comments\": {\n                                \"count\": 2\n                            }\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null,
+      "streamingMode": null,
+      "streamingInterval": 0
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "edbcc74b-509d-4cb0-99c6-2fe17a585bab"
+    },
+    {
+      "type": "route",
+      "uuid": "ce8842c1-7f82-4fb7-9976-ed7d42e5408f"
+    },
+    {
+      "type": "route",
+      "uuid": "806b2253-2cff-41a7-b78d-c2944ffe101d"
+    },
+    {
+      "type": "route",
+      "uuid": "4a1d21ea-36c0-4627-94a8-f393972df7df"
+    },
+    {
+      "type": "route",
+      "uuid": "ed150b9a-dfa3-4f98-b207-52015d82fe48"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

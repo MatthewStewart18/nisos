@@ -1,0 +1,20 @@
+services:
+  nisos-agent:
+    build:
+      context: ..
+      dockerfile: nisos-studio/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - MOCKOON_URL=http://mockoon:3001
+    depends_on:
+      - mockoon
+
+  mockoon:
+    image: mockoon/cli:latest
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./mockoon-data.json:/data/mockoon-data.json:ro
+    command: ["--data", "/data/mockoon-data.json", "--port", "3001", "--hostname", "0.0.0.0"]

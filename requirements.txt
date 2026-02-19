@@ -1,0 +1,16 @@
+langgraph-cli[inmem]
+langchain_google_genai
+langsmith
+langgraph
+langgraph-prebuilt
+langgraph-sdk
+numpy
+torch
+sentence-transformers
+pandas
+langchain-community
+langchain-core
+starlette
+uvicorn
+requests
+python-dotenv
