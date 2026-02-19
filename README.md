@@ -1,6 +1,6 @@
-# Nisos
+# Risk Assesment
 
-Nisos is a project featuring a LangGraph-based agent (`nisos-agent`) and a mock API for fetching social media profiles (for risk assesment).
+Risk assesment is a project featuring a LangGraph-based agent (`nisos-agent`) and a mock API for fetching social media profiles (for risk assesment).
 
 ## Getting Started (Local Hosting)
 
