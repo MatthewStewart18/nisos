@@ -1,7 +1,7 @@
 services:
   nisos-agent:
     build:
-      context: ..
+      context: .
       dockerfile: nisos-studio/Dockerfile
     ports:
       - "8000:8000"
@@ -20,5 +20,5 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - ./mockoon-data.json:/data/mockoon-data.json:ro
+      - ./nisos-studio/mockoon-data.json:/data/mockoon-data.json:ro
     command: ["--data", "/data/mockoon-data.json", "--port", "3001", "--hostname", "0.0.0.0"]
