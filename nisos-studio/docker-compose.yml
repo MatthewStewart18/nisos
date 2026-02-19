@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: nisos-studio/Dockerfile
     ports:
-      - "8080:8000"
+      - "8001:8000"
     environment:
       - MOCKOON_URL=http://mockoon:3001
       - GEMINI_API_KEY=${GEMINI_API_KEY}
