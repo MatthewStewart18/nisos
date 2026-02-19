@@ -6,8 +6,12 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - MOCKOON_URL=http://mockoon:3001
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - LANGSMITH_TRACING=true
+      - LANGSMITH_PROJECT_ID=${LANGSMITH_PROJECT_ID}
+      - LANGSMITH_API_KEY=${LANGSMITH_API_KEY}
+      - LANGSMITH_ENDPOINT=${LANGSMITH_ENDPOINT}
     depends_on:
       - mockoon
 
