@@ -15,25 +15,25 @@ services:
     depends_on:
       - mockoon
     labels:
-      # 1. Define the middleware and users
       - "traefik.enable=true"
-      - "traefik.http.routers.nisos-router.rule=Host(`nisos.mstewart.dev`)"
-      - "traefik.http.routers.nisos-router.entrypoints=websecure"
-      - "traefik.http.routers.nisos-router.tls=true"
-      - "traefik.http.routers.nisos-router.service=nisos-service"
-      - "traefik.http.services.nisos-service.loadbalancer.server.port=8000"
+      # Routing rule
+      - "traefik.http.routers.nisos-agent.rule=Host(`nisos.mstewart.dev`)"
+      # Define internal service port
+      - "traefik.http.routers.nisos-agent.service=nisos-agent-service"
+      - "traefik.http.services.nisos-agent-service.loadbalancer.server.port=8000"
+      # Authentication Middleware
       - "traefik.http.middlewares.nisos-auth.basicauth.users=user:$$2y$$05$$vbrV9N7Lz583DxZQHxx49uxbU87.5BAXMKeIluEsFqnOrCELK0GIu"
-      - "traefik.http.routers.nisos-router.middlewares=nisos-auth"
+      - "traefik.http.routers.nisos-agent.middlewares=nisos-auth"
 
   mockoon:
     image: mockoon/cli:latest
     ports:
       - "3001:3001"
+    volumes:
+      - ./mockoon-data.json:/data/mockoon-data.json:ro
     command: ["--data", "/data/mockoon-data.json", "--port", "3001", "--hostname", "0.0.0.0"]
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.mockoon-router.rule=Host(`socialapi.mstewart.dev`)"
-      - "traefik.http.routers.mockoon-router.entrypoints=websecure"
-      - "traefik.http.routers.mockoon-router.tls=true"
-      - "traefik.http.routers.mockoon-router.service=mockoon-service"
+      - "traefik.http.routers.mockoon.rule=Host(`socialapi.mstewart.dev`)"
+      - "traefik.http.routers.mockoon.service=mockoon-service"
       - "traefik.http.services.mockoon-service.loadbalancer.server.port=3001"
