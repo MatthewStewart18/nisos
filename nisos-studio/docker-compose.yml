@@ -1,7 +1,7 @@
 services:
   nisos-agent:
     build:
-      context: .
+      context: ..
       dockerfile: nisos-studio/Dockerfile
     ports:
       - "8001:8000"
