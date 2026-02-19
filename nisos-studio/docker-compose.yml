@@ -15,18 +15,12 @@ services:
     depends_on:
       - mockoon
     labels:
-      - "traefik.enable=true"
-      # Routing
-      - "traefik.http.routers.nisos.rule=Host(`nisos.mstewart.dev`)"
-      - "traefik.http.routers.nisos.entrypoints=websecure"
-      - "traefik.http.routers.nisos.tls=true"
-      # Internal Service Port (Important!)
-      - "traefik.http.services.nisos.loadbalancer.server.port=8000"
-      # Auth Middleware
+      # Use the native Coolify domain label (handles routing and SSL automatically)
+      - "coolify.fqdn=https://nisos.mstewart.dev"
+      # Define the Basic Auth middleware
       - "traefik.http.middlewares.nisos-auth.basicauth.users=user:$$2y$$05$$vbrV9N7Lz583DxZQHxx49uxbU87.5BAXMKeIluEsFqnOrCELK0GIu"
-      - "traefik.http.routers.nisos.middlewares=nisos-auth"
-    networks:
-      - nisos-net
+      # Tell Coolify to attach this middleware to the domain above
+      - "coolify.traefik.middlewares=nisos-auth"
 
   mockoon:
     image: mockoon/cli:latest
@@ -36,14 +30,4 @@ services:
       - ./mockoon-data.json:/data/mockoon-data.json:ro
     command: ["--data", "/data/mockoon-data.json", "--port", "3001", "--hostname", "0.0.0.0"]
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.mockoon.rule=Host(`socialapi.mstewart.dev`)"
-      - "traefik.http.routers.mockoon.entrypoints=websecure"
-      - "traefik.http.routers.mockoon.tls=true"
-      - "traefik.http.services.mockoon.loadbalancer.server.port=3001"
-    networks:
-      - nisos-net
-
-networks:
-  nisos-net:
-    driver: bridge
+      - "coolify.fqdn=https://socialapi.mstewart.dev"
