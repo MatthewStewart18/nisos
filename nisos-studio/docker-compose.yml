@@ -16,14 +16,17 @@ services:
       - mockoon
     labels:
       - "traefik.enable=true"
-      # Routing rule
-      - "traefik.http.routers.nisos-agent.rule=Host(`nisos.mstewart.dev`)"
-      # Define internal service port
-      - "traefik.http.routers.nisos-agent.service=nisos-agent-service"
-      - "traefik.http.services.nisos-agent-service.loadbalancer.server.port=8000"
-      # Authentication Middleware
+      # Routing
+      - "traefik.http.routers.nisos.rule=Host(`nisos.mstewart.dev`)"
+      - "traefik.http.routers.nisos.entrypoints=websecure"
+      - "traefik.http.routers.nisos.tls=true"
+      # Internal Service Port (Important!)
+      - "traefik.http.services.nisos.loadbalancer.server.port=8000"
+      # Auth Middleware
       - "traefik.http.middlewares.nisos-auth.basicauth.users=user:$$2y$$05$$vbrV9N7Lz583DxZQHxx49uxbU87.5BAXMKeIluEsFqnOrCELK0GIu"
-      - "traefik.http.routers.nisos-agent.middlewares=nisos-auth"
+      - "traefik.http.routers.nisos.middlewares=nisos-auth"
+    networks:
+      - nisos-net
 
   mockoon:
     image: mockoon/cli:latest
@@ -35,5 +38,12 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.mockoon.rule=Host(`socialapi.mstewart.dev`)"
-      - "traefik.http.routers.mockoon.service=mockoon-service"
-      - "traefik.http.services.mockoon-service.loadbalancer.server.port=3001"
+      - "traefik.http.routers.mockoon.entrypoints=websecure"
+      - "traefik.http.routers.mockoon.tls=true"
+      - "traefik.http.services.mockoon.loadbalancer.server.port=3001"
+    networks:
+      - nisos-net
+
+networks:
+  nisos-net:
+    driver: bridge
