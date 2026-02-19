@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisos Social Media Threat Analysis</title>
+    <title>Social Media Risk Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -25,8 +25,8 @@
 <body class="bg-gray-50 min-h-screen text-gray-900 pb-20">
     <div class="max-w-4xl mx-auto py-12 px-4">
         <header class="mb-12 text-center">
-            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Nisos Studio</h1>
-            <p class="text-lg text-gray-600 font-medium">Real-time Social Media Threat Assessment</p>
+            <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Social Media Risk Assessment Demo</h1>
+            <p class="text-lg text-gray-600 font-medium">Select a test profile to begin analysis</p>
         </header>
 
         <!-- Input Section -->
@@ -94,7 +94,7 @@
                 <div id="flagged-card" class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 opacity-0 transform translate-y-4 transition-all duration-500 delay-100">
                     <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                        Flagged Content
+                        Flagged Post Ids
                     </h2>
                     <div id="flagged-content" class="space-y-2 max-h-[120px] overflow-y-auto">
                         <div class="text-gray-400 italic">No posts flagged yet.</div>
@@ -274,8 +274,8 @@
                 
                 threatContent.innerHTML = `
                     <div class="text-center w-full">
-                        <div class="text-4xl font-black mb-1 ${isThreat ? 'text-red-600' : 'text-green-600'} tracking-tighter">
-                            ${isThreat ? 'THREAT DETECTED' : 'CLEAR'}
+                        <div class="text-2xl font-black mb-1 ${isThreat ? 'text-red-600' : 'text-green-600'} tracking-tighter">
+                            ${isThreat ? 'RISK DETECTED' : 'CLEAR'}
                         </div>
                         <div class="flex items-center justify-center gap-2 mb-4">
                             <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Confidence: ${conf.toFixed(1)}%</span>
@@ -295,7 +295,7 @@
                 flaggedContent.innerHTML = state.flagged_posts_ids.map(id => `
                     <div class="flex items-center bg-red-50 border-l-4 border-red-500 p-2.5 rounded-r-lg group hover:bg-red-100 transition-colors">
                         <svg class="w-4 h-4 text-red-500 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-                        <span class="text-[11px] font-mono font-bold text-red-900">FLAGGED ID: ${id}</span>
+                        <span class="text-[11px] font-mono font-bold text-red-900">FLAGGED POST ID: ${id}</span>
                     </div>
                 `).join('');
             } else if (state.is_threat_detected === false) {
