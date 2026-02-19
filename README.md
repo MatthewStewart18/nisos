@@ -1,10 +1,10 @@
 # Risk Assesment
 
-Risk assesment is a project featuring a LangGraph-based agent (`nisos-agent`) and a mock API for fetching social media profiles (for risk assesment).
+Risk assesment is a project featuring a LangGraph-based agent and a mock API for fetching social media profiles (for risk assesment).
 
 ## Getting Started (Local Hosting)
 
-To run the project locally with Docker Compose, navigate to the `nisos-studio` directory and ensure your API keys are configured.
+To run the project locally with Docker Compose, checkout onto the local-dev branch, navigate to the `nisos-studio` directory and ensure your API keys are configured.
 
 ### Prerequisites
 
